@@ -35,7 +35,7 @@ export function PackagingHeader() {
 
   return (
     <header
-      className={`fixed top-0 inset-x-0 z-50 transition-all duration-500 ${
+      className={`fixed top-0 inset-x-0 z-50 transition-all duration-500 bg-background/80 backdrop-blur-md border-b border-white/5 ${
         scrolled ? "py-2" : "py-4"
       }`}
     >

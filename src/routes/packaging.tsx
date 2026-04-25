@@ -11,7 +11,9 @@ function PackagingLayout() {
   return (
     <>
       <PackagingHeader />
-      <Outlet />
+      <main className="pt-20">
+        <Outlet />
+      </main>
       <PackagingFooter />
       <FloatingContact />
     </>
