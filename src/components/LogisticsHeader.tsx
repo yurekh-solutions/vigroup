@@ -24,9 +24,9 @@ export function LogisticsHeader() {
 
   return (
     <header
-      className={`fixed top-0 inset-x-0 z-50 transition-all duration-500 bg-background/80 backdrop-blur-md border-b border-white/5 ${
-        scrolled ? "py-2" : "py-4"
-      }`}
+      className={`fixed top-0 inset-x-0 z-50 transition-all duration-500 ${
+        scrolled ? "bg-background/80 backdrop-blur-md border-b border-white/5" : "bg-transparent"
+      } ${scrolled ? "py-2" : "py-4"}`}
     >
       <div className="mx-auto max-w-7xl px-4">
         <div
