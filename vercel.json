@@ -3,6 +3,73 @@
   "devCommand": "npm run dev",
   "installCommand": "npm install",
   "outputDirectory": "dist/client",
+  "redirects": [
+    {
+      "source": "/home",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/logistics/home",
+      "destination": "/logistics",
+      "permanent": true
+    },
+    {
+      "source": "/packaging/home",
+      "destination": "/packaging",
+      "permanent": true
+    },
+    {
+      "source": "/fleet/home",
+      "destination": "/fleet",
+      "permanent": true
+    },
+    {
+      "source": "/about",
+      "destination": "/logistics/about",
+      "permanent": true
+    },
+    {
+      "source": "/services",
+      "destination": "/logistics/services",
+      "permanent": true
+    },
+    {
+      "source": "/quote",
+      "destination": "/logistics/quote",
+      "permanent": true
+    },
+    {
+      "source": "/contact",
+      "destination": "/logistics/contact",
+      "permanent": true
+    },
+    {
+      "source": "/privacy-policy",
+      "destination": "/privacy",
+      "permanent": true
+    },
+    {
+      "source": "/terms-and-conditions",
+      "destination": "/terms",
+      "permanent": true
+    },
+    {
+      "source": "/vi-logistics",
+      "destination": "/logistics",
+      "permanent": true
+    },
+    {
+      "source": "/vi-packaging",
+      "destination": "/packaging",
+      "permanent": true
+    },
+    {
+      "source": "/vi-fleet",
+      "destination": "/fleet",
+      "permanent": true
+    }
+  ],
   "rewrites": [
     {
       "source": "/(.*)",
