@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+
+# Disallow admin/private areas if any
+Disallow: /api/
+Disallow: /.env
+
+# Sitemap
+Sitemap: https://vigroup.in/sitemap.xml
