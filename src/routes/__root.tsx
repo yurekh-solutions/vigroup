@@ -96,14 +96,17 @@ function RootComponent() {
   const { pathname } = useLocation();
   const isHome = pathname === "/";
   const isLogistics = pathname.startsWith("/logistics");
+  const isPackaging = pathname.startsWith("/packaging");
+  const isFleet = pathname.startsWith("/fleet");
+  const isSubsidiary = isLogistics || isPackaging || isFleet;
 
   return (
     <>
-      {!isHome && (isLogistics ? <LogisticsHeader /> : <SiteHeader />)}
+      {!isHome && !isSubsidiary && <SiteHeader />}
       <main>
         <Outlet />
       </main>
-      {!isHome && (isLogistics ? <LogisticsFooter /> : <SiteFooter />)}
+      {!isHome && !isSubsidiary && <SiteFooter />}
     </>
   );
 }

@@ -178,10 +178,27 @@ function FleetContactPage() {
 
               <button
                 type="submit"
+                onClick={(e) => {
+                  e.preventDefault();
+                  const form = e.currentTarget.form;
+                  if (!form) return;
+                  
+                  const formData = new FormData(form);
+                  const name = formData.get('name');
+                  const email = formData.get('email');
+                  const phone = formData.get('phone');
+                  const company = formData.get('company');
+                  const service = formData.get('service');
+                  const message = formData.get('message');
+                  
+                  const whatsappMessage = `*New Fleet Inquiry*%0A%0A*Name:* ${name}%0A*Email:* ${email}%0A*Phone:* ${phone}%0A*Company:* ${company}%0A*Service:* ${service}%0A*Message:* ${message}`;
+                  
+                  window.open(`https://wa.me/919619510906?text=${whatsappMessage}`, '_blank');
+                }}
                 className="w-full flex items-center justify-center gap-2 px-6 py-4 rounded-full bg-gradient-gold text-primary-foreground font-semibold glow-gold hover:scale-105 transition"
               >
                 <Send size={18} />
-                Send Message
+                Send via WhatsApp
               </button>
             </form>
           </div>

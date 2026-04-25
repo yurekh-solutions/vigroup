@@ -173,9 +173,26 @@ function LogisticsContact() {
               </div>
               <button
                 type="submit"
+                onClick={(e) => {
+                  e.preventDefault();
+                  const form = e.currentTarget.form;
+                  if (!form) return;
+                  
+                  const formData = new FormData(form);
+                  const name = formData.get('name');
+                  const email = formData.get('email');
+                  const phone = formData.get('phone');
+                  const company = formData.get('company');
+                  const subject = formData.get('subject');
+                  const message = formData.get('message');
+                  
+                  const whatsappMessage = `*New Logistics Inquiry*%0A%0A*Name:* ${name}%0A*Email:* ${email}%0A*Phone:* ${phone}%0A*Company:* ${company}%0A*Subject:* ${subject}%0A*Message:* ${message}`;
+                  
+                  window.open(`https://wa.me/919619510906?text=${whatsappMessage}`, '_blank');
+                }}
                 className="w-full inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full bg-gradient-gold text-primary-foreground font-semibold glow-gold hover:scale-105 transition"
               >
-                Send Message <Send size={16} />
+                Send via WhatsApp <Send size={16} />
               </button>
             </form>
           </div>

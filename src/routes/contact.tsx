@@ -58,6 +58,18 @@ function ContactPage() {
               <form
                 onSubmit={(e) => {
                   e.preventDefault();
+                  const formData = new FormData(e.currentTarget);
+                  const name = formData.get('name');
+                  const email = formData.get('email');
+                  const freightType = formData.get('freightType');
+                  const pickup = formData.get('pickup');
+                  const destination = formData.get('destination');
+                  const weight = formData.get('weight');
+                  const message = formData.get('message');
+                  
+                  const whatsappMessage = `*New Inquiry from Vi Group Website*%0A%0A*Name:* ${name}%0A*Email:* ${email}%0A*Freight Type:* ${freightType}%0A*Pickup:* ${pickup}%0A*Destination:* ${destination}%0A*Weight/Dimensions:* ${weight}%0A*Message:* ${message}`;
+                  
+                  window.open(`https://wa.me/919619510906?text=${whatsappMessage}`, '_blank');
                   setSent(true);
                 }}
                 className="grid gap-4"

@@ -47,6 +47,10 @@ function PackagingContact() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    
+    const whatsappMessage = `*New Packaging Inquiry*%0A%0A*Name:* ${formData.name}%0A*Email:* ${formData.email}%0A*Phone:* ${formData.phone}%0A*Company:* ${formData.company}%0A*Subject:* ${formData.subject}%0A*Industry:* ${formData.industry}%0A*Quantity:* ${formData.quantity}%0A*Message:* ${formData.message}`;
+    
+    window.open(`https://wa.me/919619510906?text=${whatsappMessage}`, '_blank');
     setSubmitted(true);
   };
 

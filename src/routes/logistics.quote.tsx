@@ -165,9 +165,30 @@ function LogisticsQuote() {
                   </div>
                   <button
                     type="submit"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      const form = e.currentTarget.form;
+                      if (!form) return;
+                      
+                      const formData = new FormData(form);
+                      const name = formData.get('name');
+                      const email = formData.get('email');
+                      const phone = formData.get('phone');
+                      const company = formData.get('company');
+                      const service = formData.get('service');
+                      const origin = formData.get('origin');
+                      const destination = formData.get('destination');
+                      const cargoType = formData.get('cargoType');
+                      const weight = formData.get('weight');
+                      const notes = formData.get('notes');
+                      
+                      const whatsappMessage = `*New Quote Request*%0A%0A*Name:* ${name}%0A*Email:* ${email}%0A*Phone:* ${phone}%0A*Company:* ${company}%0A*Service:* ${service}%0A*Origin:* ${origin}%0A*Destination:* ${destination}%0A*Cargo Type:* ${cargoType}%0A*Weight:* ${weight}%0A*Notes:* ${notes}`;
+                      
+                      window.open(`https://wa.me/919619510906?text=${whatsappMessage}`, '_blank');
+                    }}
                     className="w-full inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full bg-gradient-gold text-primary-foreground font-semibold glow-gold hover:scale-105 transition"
                   >
-                    Submit Quote Request <ArrowRight size={18} />
+                    Send Quote via WhatsApp <ArrowRight size={18} />
                   </button>
                 </form>
               </div>
