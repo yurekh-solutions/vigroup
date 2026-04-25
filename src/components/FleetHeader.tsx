@@ -99,28 +99,54 @@ export function FleetHeader() {
 
         {/* Mobile Navigation */}
         {isOpen && (
-          <div className="lg:hidden fixed inset-0 top-16 z-40 bg-background/95 backdrop-blur-lg animate-in fade-in slide-in-from-top-4 duration-200">
-            <div className="flex flex-col items-center justify-center h-full gap-6 p-8">
-              {navItems.map((item) => (
-                <Link
-                  key={item.href}
-                  to={item.href}
-                  onClick={() => setIsOpen(false)}
-                  className="text-2xl font-semibold text-foreground hover:text-gradient-gold transition-all duration-200"
-                >
-                  {item.label}
-                </Link>
-              ))}
-              <a
-                href="tel:+919619510906"
-                onClick={() => setIsOpen(false)}
-                className="mt-4 flex items-center gap-2 px-8 py-3 rounded-full text-lg font-semibold glass-gold"
-              >
-                <Phone size={20} />
-                Call Now
-              </a>
+          <>
+            {/* Backdrop */}
+            <div 
+              className="lg:hidden fixed inset-0 z-40 bg-black/50 backdrop-blur-sm"
+              onClick={() => setIsOpen(false)}
+            />
+            {/* Side Drawer */}
+            <div className="lg:hidden fixed top-0 left-0 h-full w-72 z-50 glass-strong animate-in slide-in-from-left duration-300">
+              <div className="flex flex-col h-full p-6">
+                {/* Close Button */}
+                <div className="flex justify-end mb-8">
+                  <button
+                    onClick={() => setIsOpen(false)}
+                    className="p-2 rounded-lg glass text-foreground hover:bg-white/10 transition"
+                    aria-label="Close menu"
+                  >
+                    <X size={24} />
+                  </button>
+                </div>
+                
+                {/* Navigation Links */}
+                <nav className="flex flex-col gap-2">
+                  {navItems.map((item) => (
+                    <Link
+                      key={item.href}
+                      to={item.href}
+                      onClick={() => setIsOpen(false)}
+                      className="px-4 py-3 rounded-xl text-base font-medium text-foreground/80 hover:text-foreground hover:bg-white/5 transition"
+                    >
+                      {item.label}
+                    </Link>
+                  ))}
+                </nav>
+                
+                {/* CTA Button */}
+                <div className="mt-auto pt-6">
+                  <a
+                    href="tel:+919619510906"
+                    onClick={() => setIsOpen(false)}
+                    className="flex items-center justify-center gap-2 px-6 py-3 rounded-full text-sm font-semibold glass-gold"
+                  >
+                    <Phone size={18} />
+                    Call Now
+                  </a>
+                </div>
+              </div>
             </div>
-          </div>
+          </>
         )}
       </div>
     </header>

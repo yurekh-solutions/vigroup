@@ -85,27 +85,53 @@ export function PackagingHeader() {
         </div>
 
         {open && (
-          <div className="lg:hidden fixed inset-0 top-16 z-40 bg-background/95 backdrop-blur-lg animate-in fade-in slide-in-from-top-4 duration-200">
-            <div className="flex flex-col items-center justify-center h-full gap-6 p-8">
-              {navLinks.map((l) => (
-                <Link
-                  key={l.label}
-                  to={l.href}
-                  onClick={() => setOpen(false)}
-                  className="text-2xl font-semibold text-foreground hover:text-gradient-gold transition-all duration-200"
-                >
-                  {l.label}
-                </Link>
-              ))}
-              <Link
-                to="/packaging/contact"
-                onClick={() => setOpen(false)}
-                className="mt-4 px-8 py-3 rounded-full text-lg font-semibold bg-gradient-gold text-primary-foreground glow-gold"
-              >
-                Get a Quote
-              </Link>
+          <>
+            {/* Backdrop */}
+            <div 
+              className="lg:hidden fixed inset-0 z-40 bg-black/50 backdrop-blur-sm"
+              onClick={() => setOpen(false)}
+            />
+            {/* Side Drawer */}
+            <div className="lg:hidden fixed top-0 left-0 h-full w-72 z-50 glass-strong animate-in slide-in-from-left duration-300">
+              <div className="flex flex-col h-full p-6">
+                {/* Close Button */}
+                <div className="flex justify-end mb-8">
+                  <button
+                    onClick={() => setOpen(false)}
+                    className="p-2 rounded-lg glass text-foreground hover:bg-white/10 transition"
+                    aria-label="Close menu"
+                  >
+                    <X size={24} />
+                  </button>
+                </div>
+                
+                {/* Navigation Links */}
+                <nav className="flex flex-col gap-2">
+                  {navLinks.map((l) => (
+                    <Link
+                      key={l.label}
+                      to={l.href}
+                      onClick={() => setOpen(false)}
+                      className="px-4 py-3 rounded-xl text-base font-medium text-foreground/80 hover:text-foreground hover:bg-white/5 transition"
+                    >
+                      {l.label}
+                    </Link>
+                  ))}
+                </nav>
+                
+                {/* CTA Button */}
+                <div className="mt-auto pt-6">
+                  <Link
+                    to="/packaging/contact"
+                    onClick={() => setOpen(false)}
+                    className="block w-full px-6 py-3 rounded-full text-center text-sm font-semibold bg-gradient-gold text-primary-foreground glow-gold"
+                  >
+                    Get a Quote
+                  </Link>
+                </div>
+              </div>
             </div>
-          </div>
+          </>
         )}
       </div>
     </header>
