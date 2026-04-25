@@ -1,0 +1,147 @@
+[build]
+  command = "npm run build"
+  publish = "dist/client"
+
+[build.environment]
+  NODE_VERSION = "20"
+
+# Redirects for SPA routing
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+# Legacy URL redirects
+[[redirects]]
+  from = "/home"
+  to = "/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/logistics/home"
+  to = "/logistics"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/packaging/home"
+  to = "/packaging"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/fleet/home"
+  to = "/fleet"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/about"
+  to = "/logistics/about"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/services"
+  to = "/logistics/services"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/quote"
+  to = "/logistics/quote"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/contact"
+  to = "/logistics/contact"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/privacy-policy"
+  to = "/privacy"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/terms-and-conditions"
+  to = "/terms"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/vi-logistics"
+  to = "/logistics"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/vi-packaging"
+  to = "/packaging"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/vi-fleet"
+  to = "/fleet"
+  status = 301
+  force = true
+
+# Security headers
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Content-Type-Options = "nosniff"
+    X-Frame-Options = "DENY"
+    X-XSS-Protection = "1; mode=block"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Permissions-Policy = "camera=(), microphone=(), geolocation=(self)"
+
+# Cache static assets
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/*.jpg"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/*.jpeg"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/*.png"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/*.gif"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/*.webp"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/*.svg"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/*.js"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/*.css"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
