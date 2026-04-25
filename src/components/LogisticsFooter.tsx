@@ -7,7 +7,7 @@ export function LogisticsFooter() {
     <footer className="relative mt-24">
       <div className="mx-auto max-w-7xl px-4 pb-10">
         <div className="glass-strong rounded-3xl p-8 md:p-12">
-          <div className="grid gap-10 md:grid-cols-4">
+          <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-5">
             <div className="md:col-span-1">
               <div className="flex items-center gap-3 mb-4">
                 <img
@@ -84,6 +84,29 @@ export function LogisticsFooter() {
                 <li>
                   <Link to="/terms" className="hover:text-primary transition">
                     Terms & Conditions
+                  </Link>
+                </li>
+              </ul>
+            </div>
+
+            <div>
+              <h4 className="text-sm uppercase tracking-widest text-primary mb-4">
+                Vi Group Companies
+              </h4>
+              <ul className="space-y-2 text-sm text-muted-foreground">
+                <li>
+                  <Link to="/logistics" className="text-primary font-semibold">
+                    Vi Logistics Solutions
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/packaging" className="hover:text-primary transition">
+                    Vi Packaging Solutions
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/fleet" className="hover:text-primary transition">
+                    Vi Fleet Solutions
                   </Link>
                 </li>
               </ul>
