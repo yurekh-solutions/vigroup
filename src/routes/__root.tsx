@@ -1,8 +1,6 @@
 import {
   Outlet,
   createRootRoute,
-  HeadContent,
-  Scripts,
   Link,
   useLocation,
 } from "@tanstack/react-router";
@@ -12,7 +10,7 @@ import { LogisticsHeader } from "@/components/LogisticsHeader";
 import { LogisticsFooter } from "@/components/LogisticsFooter";
 import viLogo from "@/assets/vi-group-logo.png";
 
-import appCss from "../styles.css?url";
+import "../styles.css";
 
 function NotFoundComponent() {
   return (
@@ -86,7 +84,6 @@ function RootShell({ children }: { children: React.ReactNode }) {
       </head>
       <body>
         {children}
-        <Scripts />
       </body>
     </html>
   );
