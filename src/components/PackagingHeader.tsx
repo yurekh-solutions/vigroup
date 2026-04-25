@@ -85,24 +85,26 @@ export function PackagingHeader() {
         </div>
 
         {open && (
-          <div className="lg:hidden mt-2 glass-strong rounded-2xl p-4 flex flex-col gap-1">
-            {navLinks.map((l) => (
+          <div className="lg:hidden fixed inset-0 top-16 z-40 bg-background/95 backdrop-blur-lg animate-in fade-in slide-in-from-top-4 duration-200">
+            <div className="flex flex-col items-center justify-center h-full gap-6 p-8">
+              {navLinks.map((l) => (
+                <Link
+                  key={l.label}
+                  to={l.href}
+                  onClick={() => setOpen(false)}
+                  className="text-2xl font-semibold text-foreground hover:text-gradient-gold transition-all duration-200"
+                >
+                  {l.label}
+                </Link>
+              ))}
               <Link
-                key={l.label}
-                to={l.href}
+                to="/packaging/contact"
                 onClick={() => setOpen(false)}
-                className="px-4 py-3 rounded-xl text-sm font-medium hover:bg-white/5"
+                className="mt-4 px-8 py-3 rounded-full text-lg font-semibold bg-gradient-gold text-primary-foreground glow-gold"
               >
-                {l.label}
+                Get a Quote
               </Link>
-            ))}
-            <Link
-              to="/packaging/contact"
-              onClick={() => setOpen(false)}
-              className="mx-4 mt-2 px-5 py-3 rounded-full text-sm font-semibold bg-gradient-gold text-primary-foreground text-center glow-gold"
-            >
-              Get a Quote
-            </Link>
+            </div>
           </div>
         )}
       </div>

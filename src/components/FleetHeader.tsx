@@ -99,29 +99,27 @@ export function FleetHeader() {
 
         {/* Mobile Navigation */}
         {isOpen && (
-          <div className="lg:hidden mt-3 glass-strong rounded-2xl p-6 animate-in slide-in-from-top-2">
-            <nav className="flex flex-col gap-2">
+          <div className="lg:hidden fixed inset-0 top-16 z-40 bg-background/95 backdrop-blur-lg animate-in fade-in slide-in-from-top-4 duration-200">
+            <div className="flex flex-col items-center justify-center h-full gap-6 p-8">
               {navItems.map((item) => (
                 <Link
                   key={item.href}
                   to={item.href}
-                  className={`px-4 py-3 rounded-lg text-sm font-medium transition ${
-                    location.pathname === item.href
-                      ? "text-primary bg-white/10"
-                      : "text-foreground/80 hover:text-primary hover:bg-white/5"
-                  }`}
+                  onClick={() => setIsOpen(false)}
+                  className="text-2xl font-semibold text-foreground hover:text-gradient-gold transition-all duration-200"
                 >
                   {item.label}
                 </Link>
               ))}
               <a
                 href="tel:+919619510906"
-                className="mt-4 flex items-center justify-center gap-2 px-5 py-3 rounded-full bg-gradient-gold text-primary-foreground font-semibold"
+                onClick={() => setIsOpen(false)}
+                className="mt-4 flex items-center gap-2 px-8 py-3 rounded-full text-lg font-semibold glass-gold"
               >
-                <Phone size={16} />
-                Call Now: +91 961 951 0906
+                <Phone size={20} />
+                Call Now
               </a>
-            </nav>
+            </div>
           </div>
         )}
       </div>
