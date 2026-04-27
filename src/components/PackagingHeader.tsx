@@ -88,17 +88,17 @@ export function PackagingHeader() {
           <>
             {/* Backdrop */}
             <div 
-              className="lg:hidden fixed inset-0 z-40 bg-black/60 backdrop-blur-sm"
+              className="lg:hidden fixed inset-0 z-40 bg-black/70"
               onClick={() => setOpen(false)}
             />
             {/* Side Drawer */}
-            <div className="lg:hidden fixed top-0 left-0 h-full w-72 z-50 bg-background border-r border-white/10 animate-in slide-in-from-left duration-300">
+            <div className="lg:hidden fixed top-0 left-0 h-full w-72 z-50 bg-[#0a0a0f] border-r border-white/10 animate-in slide-in-from-left duration-300 overflow-y-auto">
               <div className="flex flex-col h-full p-6">
                 {/* Close Button */}
                 <div className="flex justify-end mb-8">
                   <button
                     onClick={() => setOpen(false)}
-                    className="p-2 rounded-lg bg-white/5 text-foreground hover:bg-white/10 transition"
+                    className="p-2 rounded-lg bg-white/10 text-foreground hover:bg-white/20 transition"
                     aria-label="Close menu"
                   >
                     <X size={24} />
@@ -112,7 +112,7 @@ export function PackagingHeader() {
                       key={l.label}
                       to={l.href}
                       onClick={() => setOpen(false)}
-                      className="px-4 py-3 rounded-lg text-base font-medium text-foreground/80 hover:text-foreground hover:bg-white/5 transition"
+                      className="px-4 py-3 rounded-lg text-base font-medium text-white/80 hover:text-white hover:bg-white/10 transition"
                     >
                       {l.label}
                     </Link>
