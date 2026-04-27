@@ -27,7 +27,7 @@ export function PageHero({
 
   return (
     <section
-      className={`relative ${heightCls} flex flex-col justify-center overflow-hidden pt-28 pb-16`}
+      className={`relative ${heightCls} flex flex-col justify-center overflow-hidden pt-32 sm:pt-36 md:pt-40 pb-16`}
     >
       <div className="absolute inset-0">
         <img src={image} alt="" className="absolute inset-0 h-full w-full object-cover" />

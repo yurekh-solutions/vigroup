@@ -11,7 +11,7 @@ function FleetLayout() {
   return (
     <>
       <FleetHeader />
-      <main className="pt-20">
+      <main>
         <Outlet />
       </main>
       <FleetFooter />

@@ -11,7 +11,7 @@ function LogisticsLayout() {
   return (
     <>
       <LogisticsHeader />
-      <main className="pt-20">
+      <main>
         <Outlet />
       </main>
       <LogisticsFooter />
