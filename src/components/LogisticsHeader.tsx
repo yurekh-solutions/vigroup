@@ -77,17 +77,17 @@ export function LogisticsHeader() {
           <>
             {/* Backdrop */}
             <div 
-              className="lg:hidden fixed inset-0 z-40 bg-black/50 backdrop-blur-sm"
+              className="lg:hidden fixed inset-0 z-40 bg-black/60 backdrop-blur-sm"
               onClick={() => setOpen(false)}
             />
             {/* Side Drawer */}
-            <div className="lg:hidden fixed top-0 left-0 h-full w-72 z-50 glass-strong animate-in slide-in-from-left duration-300">
+            <div className="lg:hidden fixed top-0 left-0 h-full w-72 z-50 bg-background border-r border-white/10 animate-in slide-in-from-left duration-300">
               <div className="flex flex-col h-full p-6">
                 {/* Close Button */}
                 <div className="flex justify-end mb-8">
                   <button
                     onClick={() => setOpen(false)}
-                    className="p-2 rounded-lg glass text-foreground hover:bg-white/10 transition"
+                    className="p-2 rounded-lg bg-white/5 text-foreground hover:bg-white/10 transition"
                     aria-label="Close menu"
                   >
                     <X size={24} />
@@ -95,13 +95,13 @@ export function LogisticsHeader() {
                 </div>
                 
                 {/* Navigation Links */}
-                <nav className="flex flex-col gap-2">
+                <nav className="flex flex-col gap-1">
                   {navLinks.map((l) => (
                     <a
                       key={l.label}
                       href={l.href}
                       onClick={() => setOpen(false)}
-                      className="px-4 py-3 rounded-xl text-base font-medium text-foreground/80 hover:text-foreground hover:bg-white/5 transition"
+                      className="px-4 py-3 rounded-lg text-base font-medium text-foreground/80 hover:text-foreground hover:bg-white/5 transition"
                     >
                       {l.label}
                     </a>
