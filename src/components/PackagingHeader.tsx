@@ -88,23 +88,12 @@ export function PackagingHeader() {
           <>
             {/* Backdrop */}
             <div 
-              className="lg:hidden fixed inset-0 z-40 bg-black/70"
+              className="lg:hidden fixed inset-0 z-40 bg-black/80"
               onClick={() => setOpen(false)}
             />
             {/* Side Drawer */}
             <div className="lg:hidden fixed top-0 left-0 h-full w-72 z-50 bg-[#0a0a0f] border-r border-white/10 animate-in slide-in-from-left duration-300 overflow-y-auto">
-              <div className="flex flex-col h-full p-6">
-                {/* Close Button */}
-                <div className="flex justify-end mb-8">
-                  <button
-                    onClick={() => setOpen(false)}
-                    className="p-2 rounded-lg bg-white/10 text-foreground hover:bg-white/20 transition"
-                    aria-label="Close menu"
-                  >
-                    <X size={24} />
-                  </button>
-                </div>
-                
+              <div className="flex flex-col h-full p-6 pt-20">
                 {/* Navigation Links */}
                 <nav className="flex flex-col gap-1">
                   {navLinks.map((l) => (
@@ -120,7 +109,7 @@ export function PackagingHeader() {
                 </nav>
                 
                 {/* CTA Button */}
-                <div className="mt-auto pt-6">
+                <div className="mt-auto pb-6">
                   <Link
                     to="/packaging/contact"
                     onClick={() => setOpen(false)}
